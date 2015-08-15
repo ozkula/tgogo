@@ -7,7 +7,7 @@
   <div class="navbar-fixed">
       <nav class=" light-blue darken-4">
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">TGogo</a>
+            <a href="#" class="brand-logo"></a>
         </div>
       </nav>
 	</div>
@@ -21,9 +21,9 @@
         });
         function validate() {
         if (document.getElementById('return').checked) {
-            document.getElementById('arrival').disabled = true;
-        } else {
             document.getElementById('arrival').disabled = false;
+        } else {
+            document.getElementById('arrival').disabled = true;
         }
     }
     </script>
