@@ -2,11 +2,34 @@
   <!-- Compiled and minified JavaScript -->
   <script src="<?php echo base_url(); ?>js/materialize.min.js"></script>
     <script type="text/javascript">
-      $('.datepicker').pickadate({
-		  selectMonths: true, 
-      selectYears: true,
-      min: 1,
-      formatSubmit: 'yyyy-mm-dd'
+      $('.datedepart').pickadate({
+  		  selectMonths: true, 
+        selectYears: true,
+        min: 1,
+        closeOnSelect: false,
+        format: 'd mmmm yyyy',
+        formatSubmit: 'yyyy-mm-dd'
+      });
+      $('.datereturn').pickadate({
+        selectMonths: true, 
+        selectYears: true,
+        min: 1,
+        closeOnSelect: true,
+        format: 'd mmmm yyyy',
+        formatSubmit: 'yyyy-mm-dd'
       });
     </script>
-    
+     <script type="text/javascript">
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+        function roundTrip(){
+          var roundtrip = document.getElementById("roundtrip");
+          var datereturn = document.getElementById("datereturn");
+          if (roundtrip.options[roundtrip.selectedIndex].value == '1') {
+            datereturn.disabled = false;
+          }else {
+            datereturn.disabled = true;
+          };
+        }
+    </script>

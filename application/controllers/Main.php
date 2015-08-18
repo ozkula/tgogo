@@ -6,33 +6,13 @@ class Main extends CI_Controller {
 	function index()
 	{	
 		$token = $this->ApiTicketFlight->getToken()->token;
+		$ipAdd = $this->Linkresponse->getRealIp();
 		
 		$data['token'] = $token;
 		$data['ListAirport'] = $this->ApiTicketFlight->ListAirport($token)['all_airport']['airport'];
 		$data['result_search'] = FALSE;
+		$data['your_ip'] = $this->ApiTicketFlight->getNearestAirport($token,$ipAdd);
 		$this->load->view('main',$data);
 	}
-	function SearchFlight()
-	{	
-		$post = $this->input->post();
-		$departure = $post['departure'];
-		$destination = $post['destination'];
-		$datedepart = $post['datedepart'];
-
-		$roundtrip = $post['roundtrip'];
-		
-		if ($roundtrip == 0) {
-			$datereturn = $datedepart;
-		}else{
-			$datereturn = $post['datereturn'];
-		}
-		$adult = $post['adult'];
-		$child = $post['child'];
-		$infant = $post['infant'];
-		
-		$token = $this->ApiTicketFlight->getToken()->token;
-		$data['ListAirport'] = $this->ApiTicketFlight->ListAirport($token)['all_airport']['airport'];
-		$data['result_search'] = $this->ApiTicketFlight->SearchFlight($token,$departure,$destination,$datedepart,$datereturn,$adult,$child,$infant,$roundtrip);
-		$this->load->view('main',$data);
-	}
+	
 }

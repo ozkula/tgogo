@@ -52,6 +52,11 @@ class ApiTicketFlight extends CI_Model
 			$dolanJson = json_decode(json_encode($html),true);
 			return $dolanJson;
 		}
-
+		function getNearestAirport($token,$ipAdd){
+			$link = link."flight_api/getNearestAirport?token=".$token."&ip=".$ipAdd.json;
+			$html = $this->Linkresponse->getContentJson($link);
+			$dolanJson = json_decode(json_encode($html),true);
+			return $dolanJson;
+		}
 }
 ?>
