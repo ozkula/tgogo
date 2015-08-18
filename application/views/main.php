@@ -19,13 +19,8 @@
         $(document).ready(function() {
           $('select').material_select();
         });
-        function validate() {
-        if (document.getElementById('return').checked) {
-            document.getElementById('arrival').disabled = false;
-        } else {
-            document.getElementById('arrival').disabled = true;
-        }
-    }
+        dropdown = document.getElementById('roundtrip');
+        
     </script>
   </body>
 </html>

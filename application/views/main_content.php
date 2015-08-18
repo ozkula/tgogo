@@ -19,24 +19,50 @@
                   </select>
                 </div>  
                 <div class="input-field">
-                      <input type="checkbox" id="return" onclick="validate()" name="roundtrip" value="1" />
-                      <label for="return">Pulang Pergi</label>
+                      <select name="roundtrip" id="roundtrip">
+                        <option value="" disabled selected>Pulang Pergi</option>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
+                      </select>
                 </div>
               </div>
 
               <div class="col m6 s6">
                 <div class="input-field">
-                  <input type="date" class="datepicker" name="datedepart" id="depart" placeholder="Waktu Berangkat">
+                  <input type="date" class="datepicker" name="datedepart" id="datedepart" placeholder="Waktu Berangkat">
                 </div>
                 <div class="input-field">
-                  <input type="date" class="datepicker" name="datereturn" id="arrival" placeholder ="Waktu Kembali" disabled>
+                  <input type="date" class="datepicker" name="datereturn" id="datereturn" placeholder ="Waktu Kembali">
                 </div>
               </div>
+                    <select name="adult">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>  
+                    <select name="child">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                    <select name="infant">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
           </div>
           <div class="row">
                 <button class="btn waves-effect waves-light col m12 s12" type="submit" name="action"><i class="material-icons">flight</i> Cari</button>
           </div>
           </form>
           <pre>
-          
+          <?php print_r($result_search); ?>
           </pre>
