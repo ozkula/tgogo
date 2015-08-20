@@ -9,7 +9,7 @@ class Main extends CI_Controller {
 		$ipAdd = $this->Linkresponse->getRealIp();
 		
 		$data['token'] = $token;
-		$data['ListAirport'] = $this->ApiTicketFlight->ListAirport($token)['all_airport']['airport'];
+		$data['Airport'] = $this->ApiTicketFlight->ListAirport($token);
 		$data['result_search'] = FALSE;
 		$data['your_ip'] = $this->ApiTicketFlight->getNearestAirport($token,$ipAdd);
 		$this->load->view('main',$data);

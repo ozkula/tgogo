@@ -1,3 +1,4 @@
+<?php $ListAirport = $Airport['all_airport']['airport']; ?>
 <div class="row">
 	<div class="col s12 m12 l12">
 		<div class="card ">
