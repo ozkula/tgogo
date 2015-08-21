@@ -7,7 +7,7 @@
         		<div class="row">
         			<div class="col s12 m12 l4">
         				<div class="input-field">
-		                  <select name="departure">
+		                  <select name="departure" required>
 		                    <option value="" disabled selected>Berangkat</option>
 		                    <?php for ($i=0; $i <count($ListAirport) ; $i++) { ?>
 		                     <option value="<?php echo $ListAirport[$i]['airport_code']; ?>"><?php echo $ListAirport[$i]['location_name'].' - '.$ListAirport[$i]['airport_name'].' - '.$ListAirport[$i]['airport_code']; ?></option> -->
@@ -15,7 +15,7 @@
 		                  </select>
 		                </div>
 		                <div class="input-field">
-		                  <select name="destination">
+		                  <select name="destination" required>
 		                    <option value="" disabled selected>Tujuan</option>
 		                   	<?php for ($i=0; $i <count($ListAirport) ; $i++) { ?>
 		                    	<option value="<?php echo $ListAirport[$i]['airport_code']; ?>"><?php echo $ListAirport[$i]['location_name'].' - '.$ListAirport[$i]['airport_name'].' - '.$ListAirport[$i]['airport_code']; ?></option> -->
@@ -23,7 +23,7 @@
 		                  </select>
 		                </div>
 		                <div class="input-field">
-		                      <select name="roundtrip" id="roundtrip" onchange="roundTrip();">
+		                      <select name="roundtrip" id="roundtrip">
 		                        <option value="" disabled selected>Pulang Pergi</option>
 		                        <option value="1">Ya</option>
 		                        <option value="0">Tidak</option>
@@ -32,7 +32,7 @@
         			</div>
         			<div class="col s6 m6 l4">
         				<div class="input-field">
-			            	<input type="text" class="datedepart" name="datedepart" id="datedepart" placeholder="Waktu Berangkat">
+			            	<input type="text" class="datedepart" name="datedepart" id="datedepart" placeholder="Waktu Berangkat" required>
 			            </div>
 			            <div class="input-field">
 			            	<input type="text" class="datereturn" name="datereturn" id="datereturn" placeholder ="Waktu Kembali" disabled>
@@ -80,4 +80,3 @@
         </div>
     </div>
 </div>
-<?php print_r($your_ip); ?>
