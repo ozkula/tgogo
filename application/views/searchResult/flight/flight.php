@@ -16,7 +16,7 @@
 	    </div>
 	</nav>
     <div class="container">
-      <?php $this->load->view('searchResult/flight_content_depart'); ?>
+      <?php $this->load->view('searchResult/flight/flight_content_depart'); ?>
     </div>
 
 	<nav class="light-blue darken-3">
@@ -25,7 +25,7 @@
 	    </div>
 	</nav>
     <div class="container">
-      <?php $this->load->view('searchResult/flight_content_return'); ?>
+      <?php $this->load->view('searchResult/flight/flight_content_return'); ?>
     </div>
 
     <?php } else {
@@ -39,7 +39,7 @@
 	</nav>
 
     <div class="container">
-      <?php $this->load->view('searchResult/flight_content_depart'); ?>
+      <?php $this->load->view('searchResult/flight/flight_content_depart'); ?>
     </div>
     <?php } ?>
 	

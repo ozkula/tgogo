@@ -58,11 +58,11 @@ class ApiTicketFlight extends CI_Model
 			$dolanJson = json_decode(json_encode($html),true);
 			return $dolanJson;
 		}
-		// function getFlightData($token,$flight_id){
-		// 	$link = link."flight_api/get_flight_data?flight_id=".$flight_id."&token=".$token."&date=2014-05-30".json;
-		// 	$html = $this->Linkresponse->getContentJson($link);
-		// 	$dolanJson = json_decode(json_encode($html),true);
-		// 	return $dolanJson;
-		// }
+		function getDepartFlightData($token,$flight_id,$date){
+			$link = link."flight_api/get_flight_data?flight_id=".$flight_id."&token=".$token."&date=".$date.json;
+			$html = $this->Linkresponse->getContentJson($link);
+			$dolanJson = json_decode(json_encode($html),true);
+			return $dolanJson;
+		}
 }
 ?>

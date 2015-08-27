@@ -26,7 +26,7 @@ class Search extends CI_Controller {
 		$data['roundtrip'] = $roundtrip;
 		$data['ListAirport'] = $this->ApiTicketFlight->ListAirport($token)['all_airport']['airport'];
 		$data['result_search'] = $this->ApiTicketFlight->SearchFlight($token,$departure,$destination,$datedepart,$datereturn,$adult,$child,$infant,$roundtrip);
-		$this->load->view('searchResult/flight',$data);
+		$this->load->view('searchResult/flight/flight',$data);
 	}
 	
 }
